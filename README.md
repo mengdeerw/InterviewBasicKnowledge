@@ -1020,13 +1020,13 @@ new (place_address) type [size] { braced initializer list }
 
 > [如何定义一个只能在堆上（栈上）生成对象的类?](https://www.nowcoder.com/questionTerminal/0a584aa13f804f3ea72b442a065a7618)
 
-#### 只能在堆上
+#### 只能在栈上
 
 方法：将析构函数设置为私有
 
 原因：C++ 是静态绑定语言，编译器管理栈上对象的生命周期，编译器在为类对象分配栈空间时，会先检查类的析构函数的访问性。若析构函数不可访问，则不能在栈上创建对象。
 
-#### 只能在栈上
+#### 只能在堆上
 
 方法：将 new 和 delete 重载为私有
 
